@@ -98,7 +98,12 @@ const ContactPage = ({ data }) => (
             </a>
           </P>
 
-          <Form name="kontakt" netlify>
+          <Form
+            name="contact"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+          >
+            <input type="hidden" name="bot-field" />
             <Row>
               <Column>
                 <Input
