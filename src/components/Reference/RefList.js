@@ -11,13 +11,14 @@ const StyledRefs = styled.div`
 const RefList = ({ references }) => {
   const allRefs = references.map((reference, i) => {
     const ref = reference.node
+    console.log(ref)
     return (
       <Ref
         key={i}
         title={ref.title.value}
         colorText={ref.textColor.value}
         colorBg={ref.bgColor.value}
-        image={ref.thumbnail.childImageSharp}
+        image={ref.thumbnail.value.childImageSharp}
         link=" "
       />
     )

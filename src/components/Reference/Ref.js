@@ -5,7 +5,7 @@ import breakpoints from "../../utils/breakpoints"
 const StyledRef = styled.article`
   background-color: ${props => props.bgColor};
   background-size: contain;
-  padding: 45px 70px;
+  padding: 50px 40px;
   width: 48%;
   height: 487px;
   position: relative;
@@ -22,7 +22,7 @@ const StyledRef = styled.article`
     width: 100%;
     height: 300px;
     margin: 30px 0 0 0;
-    padding: 20px 30px;
+    padding: 20px;
     &:nth-child(even) {
       margin: 30px 0 0 0;
     }
@@ -30,14 +30,15 @@ const StyledRef = styled.article`
 `
 const StyledHeading = styled.h3`
   color: ${props => props.color};
-  font-size: 36px;
+  font-size: 34px;
   line-height: 55px;
-  max-width: 65%;
+  max-width: 45%;
   z-index: 999;
 
   @media (max-width: ${breakpoints.iphone}) {
     font-size: 26px;
     line-height: 34px;
+    max-width: 100%;
   }
 `
 const StyledLink = styled.a`
@@ -45,13 +46,10 @@ const StyledLink = styled.a`
   text-decoration: underline;
   font-size: 16px;
 `
-const StyledImg = styled.img`
-  display: none;
-`
 const StyledCover = styled.div`
   position: absolute;
   top: 0;
-  left: 0;
+  left: 31%;
   bottom: 0;
   right: 0;
   margin: 0;
@@ -60,7 +58,7 @@ const StyledCover = styled.div`
   transition: transform 800ms;
   transform-origin: center;
 
-  &:hover {
+  ${StyledRef}:hover & {
     transform: scale(1.08);
   }
 `
@@ -69,8 +67,7 @@ const Ref = ({ title, colorText, colorBg, image, link }) => (
   <StyledRef bgColor={colorBg}>
     <StyledHeading color={colorText}>{title}</StyledHeading>
     <StyledLink color={colorText}>Prohlédnout projekt</StyledLink>
-    <StyledImg />
-    <StyledCover img={image} />
+    <StyledCover img={image.fluid.src} />
   </StyledRef>
 )
 
