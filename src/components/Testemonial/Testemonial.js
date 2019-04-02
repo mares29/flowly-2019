@@ -36,11 +36,11 @@ const StyledClient = styled.div`
 
 const Testemonial = ({ text, position, name, photo }) => (
   <StyledTestemonial>
-    <StyledText>{text.value}</StyledText>
+    <StyledText>{text}</StyledText>
     <StyledClient>
       <Img fixed={photo.childImageSharp.fixed} />
-      <h5>{name.value}</h5>
-      <p>{position.value}</p>
+      <h5>{name}</h5>
+      <p>{position}</p>
     </StyledClient>
   </StyledTestemonial>
 )
