@@ -18,6 +18,7 @@ const StyledWrap = styled.div`
   right: 0;
   bottom: 0;
   z-index: 9997;
+  pointer-events: none;
 `
 const StyledMenuPanel = styled.div`
   position: absolute;
@@ -26,6 +27,7 @@ const StyledMenuPanel = styled.div`
   width: 50%;
   bottom: 0;
   display: flex;
+  pointer-events: initial;
 
   @media (max-width: ${breakpoints.iphone}) {
     width: 100%;
@@ -38,6 +40,7 @@ const StyledContactPanel = styled.div`
   width: 50%;
   bottom: 0;
   display: flex;
+  pointer-events: initial;
 
   @media (max-width: ${breakpoints.iphone}) {
     display: none;
