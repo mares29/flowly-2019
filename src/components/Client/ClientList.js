@@ -1,6 +1,8 @@
-import PropTypes from 'prop-types'
-import React from 'react'
-import styled from 'styled-components'
+import { graphql, StaticQuery } from "gatsby"
+import Img from "gatsby-image"
+import PropTypes from "prop-types"
+import React from "react"
+import styled from "styled-components"
 
 const StyledClientList = styled.div`
   flex: 1;
@@ -8,23 +10,52 @@ const StyledClientList = styled.div`
   justify-content: space-between;
   flex-wrap: wrap;
   div {
-    width: ${props => (props.horizontal ? 'auto' : '50%')};
+    width: ${props => (props.horizontal ? "auto" : "50%")};
     padding: 20px 0;
     text-align: right;
+    opacity: 0.6;
+    transition: opacity 200ms;
+    &:hover {
+      opacity: 1;
+    }
   }
 `
 
 const ClientList = ({ clients, horizontal }) => {
-  const allClients = clients.map((node, i) => {
-    if (horizontal && i >= 4) return false
-    const man = node
-    return (
-      <div key={i}>
-        <img src={man.logo} width="240" alt="" />
-      </div>
-    )
-  })
-  return <StyledClientList horizontal={horizontal}>{allClients}</StyledClientList>
+  const allClients = clients =>
+    clients.map((node, i) => {
+      if (horizontal && i >= 4) return false
+      const man = node.node
+      return (
+        <div key={i}>
+          <Img fixed={man.childImageSharp.fixed} />
+        </div>
+      )
+    })
+  return (
+    <StaticQuery
+      query={graphql`
+        query {
+          allFile(filter: { relativeDirectory: { eq: "clients" } }) {
+            edges {
+              node {
+                childImageSharp {
+                  fixed(width: 240) {
+                    ...GatsbyImageSharpFixed_withWebp
+                  }
+                }
+              }
+            }
+          }
+        }
+      `}
+      render={data => (
+        <StyledClientList horizontal={horizontal}>
+          {allClients(data.allFile.edges)}
+        </StyledClientList>
+      )}
+    />
+  )
 }
 
 ClientList.propTypes = {
