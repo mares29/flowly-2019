@@ -3,6 +3,7 @@ import React from "react"
 import styled from "styled-components"
 import colors from "../../constants/colors"
 import fonts from "../../constants/fonts"
+import Cross from "./Cross"
 
 const StyledButton = styled.button`
   display: flex;
@@ -19,6 +20,10 @@ const StyledButton = styled.button`
   transition: 200ms all;
   padding: 0;
 
+  svg {
+    margin-left: -10px;
+  }
+
   svg path {
     transition: 200ms all;
   }
@@ -27,31 +32,24 @@ const StyledButton = styled.button`
     color: ${colors.creative};
 
     svg path {
-      fill: ${colors.creative};
+      stroke: ${colors.creative};
     }
   }
 `
 
-class Button extends React.Component {
-  state = {
-    isPaused: false,
-    speed: 5,
+const Button = props => {
+  const clickHandler = () => {
+    props.onClick()
   }
 
-  clickHandler = () => {
-    this.props.onClick()
-  }
+  const { isMenuVisible } = props
 
-  render() {
-    const { isMenuVisible } = this.props
-
-    return (
-      <StyledButton state={this.props.state} onClick={this.clickHandler}>
-        {isMenuVisible ? "skrýt" : "menu"}
-        <div style={{ marginLeft: 10 }} />
-      </StyledButton>
-    )
-  }
+  return (
+    <StyledButton onClick={clickHandler}>
+      {isMenuVisible ? "skrýt" : "menu"}
+      <Cross isOpen={isMenuVisible} />
+    </StyledButton>
+  )
 }
 
 Button.propTypes = {

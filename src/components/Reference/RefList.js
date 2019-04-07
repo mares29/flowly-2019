@@ -11,7 +11,7 @@ const StyledRefs = styled.div`
 const RefList = ({ references }) => {
   const allRefs = references.map((reference, i) => {
     const ref = reference.node
-    console.log(ref)
+    
     return (
       <Ref
         key={i}

@@ -16,7 +16,7 @@ const StyledHeader = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 40px;
+  padding: 0 20px 0 40px;
   z-index: 9999;
 
   @media (max-width: ${breakpoints.desktop}) {
