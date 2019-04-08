@@ -1,7 +1,7 @@
-import React from "react";
-import "./cross.css";
+import React from "react"
+import "./cross.css"
 
-const Cross = ({isOpen}) => {
+const Cross = ({ isOpen }) => {
   const openClass = isOpen ? "active" : ""
 
   return (

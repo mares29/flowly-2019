@@ -1,7 +1,7 @@
-import styled from 'styled-components'
-import colors from '../../constants/colors'
-import { downWithFadeInAnimation } from '../../utils/animations'
-import breakpoints from '../../utils/breakpoints'
+import styled from "styled-components"
+import colors from "../../constants/colors"
+import { downWithFadeInAnimation } from "../../utils/animations"
+import breakpoints from "../../utils/breakpoints"
 
 export const H1 = styled.h1`
   color: #fff;
@@ -103,4 +103,26 @@ export const Hr = styled.div`
   opacity: 0.06;
   margin: 40px 0 80px;
   transform: rotate(${props => (props.reversed ? 2 : -2)}deg);
+`
+
+export const Ul = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0px;
+  li {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    color: #fff;
+    list-style-type: none;
+    &:before {
+      display: block;
+      content: " ";
+      width: 12px;
+      height: 12px;
+      margin-right: 15px;
+      border-radius: 6px;
+      background: ${colors.creative};
+    }
+  }
 `

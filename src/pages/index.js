@@ -1,18 +1,20 @@
-import { graphql } from "gatsby"
-import React from "react"
-import styled from "styled-components"
-import Clients from "../components/Client/Clients"
-import Container from "../components/Container/Container"
-import Hero from "../components/Hero/Hero"
-import Link from "../components/Link/Link"
-import Main from "../components/Main/Main"
-import MemberCardList from "../components/Member/MemberCardList"
-import RefList from "../components/Reference/RefList"
-import Section from "../components/Section/Section"
-import Testemonials from "../components/Testemonial/Testemonials"
-import { H2, P } from "../components/Typography/Typography"
-import breakpoints from "../utils/breakpoints"
-import { clients } from "../utils/fakeData"
+import { graphql } from "gatsby";
+import React from "react";
+import styled from "styled-components";
+import Clients from "../components/Client/Clients";
+import Container from "../components/Container/Container";
+import BackgroundTriangles from "../components/Graphics/BackgroundTriables";
+import Triangles from "../components/Graphics/Triangles";
+import Hero from "../components/Hero/Hero";
+import Link from "../components/Link/Link";
+import Main from "../components/Main/Main";
+import MemberCardList from "../components/Member/MemberCardList";
+import RefList from "../components/Reference/RefList";
+import Section from "../components/Section/Section";
+import Testemonials from "../components/Testemonial/Testemonials";
+import { H2, P } from "../components/Typography/Typography";
+import breakpoints from "../utils/breakpoints";
+import { clients } from "../utils/fakeData";
 
 const StyledAboutText = styled(P)`
   width: 80%;
@@ -26,7 +28,12 @@ const StyledLinks = styled.ul`
   margin: 100px 0 0 0;
 
   li {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
+    display: block;
+
+    &:last-of-type {
+      margin-top: 80px;
+    }
   }
 `
 const StyledRefWrapper = styled.div`
@@ -42,9 +49,10 @@ const IndexPage = ({ data }) => (
     <Hero bgImg={data.file} hp />
     <Main id="obsah">
       <Section>
+        <Triangles opacity={0.1} />
         <Container>
           <H2>
-            My se o Vás <span className="break">postáráme</span>
+            Rádi vám <span className="break">pomůžeme</span>
           </H2>
           <StyledAboutText>
             Nemusíte obvolávat množství lidí v agentuře. S námi jednáte napřímo.
@@ -69,11 +77,15 @@ const IndexPage = ({ data }) => (
             <li>
               <Link to="/sluzby#ux">UX design</Link>
             </li>
+            <li>
+              <Link to="/sluzby">Zobrazit všechny služby</Link>
+            </li>
           </StyledLinks>
         </Container>
       </Section>
 
       <Section long>
+        <BackgroundTriangles height="100%" right />
         <Container>
           <H2>
             Baví nás dělat projekty,{" "}

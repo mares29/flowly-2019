@@ -1,8 +1,8 @@
-import PropTypes from 'prop-types'
-import React from 'react'
-import styled from 'styled-components'
-import ClientList from '../Client/ClientList'
-import { H3, P } from '../Typography/Typography'
+import PropTypes from "prop-types"
+import React from "react"
+import styled from "styled-components"
+import ClientList from "../Client/ClientList"
+import { H3, P } from "../Typography/Typography"
 
 const StyledLogosWrap = styled.div`
   display: flex;
@@ -27,12 +27,13 @@ const Clients = ({ clients }) => (
   <StyledLogosWrap>
     <div className="content">
       <H3>
-        Nebojíme se<br />
+        Nebojíme se
+        <br />
         <span>velkých úkolů</span>
       </H3>
       <StyledLogosText>
-        Nemusíte obvolávat množství lidí v agentuře. S námi jednáte napřímo. Kancelářemi jsou nám kavárny, restaurace a
-        jiné obytné prostory,
+        Vybíráme si projekty, které mají smysl, pro které se můžeme nadchnout a
+        posouvají nás dál v tom, co děláme.
       </StyledLogosText>
     </div>
     <ClientList clients={clients} />

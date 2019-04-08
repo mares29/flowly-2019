@@ -1,11 +1,11 @@
-import Link from 'gatsby-link'
-import PropTypes from 'prop-types'
-import React from 'react'
-import styled from 'styled-components'
-import icons from '../../constants/icons'
-import breakpoints from '../../utils/breakpoints'
-import Icon from '../Icon/Icon'
-import Button from './Button'
+import Link from "gatsby-link"
+import PropTypes from "prop-types"
+import React from "react"
+import styled from "styled-components"
+import icons from "../../constants/icons"
+import breakpoints from "../../utils/breakpoints"
+import Icon from "../Icon/Icon"
+import Button from "./Button"
 
 const StyledHeader = styled.header`
   position: absolute;
@@ -28,7 +28,12 @@ const StyledHeader = styled.header`
 const Header = props => (
   <StyledHeader>
     <Link to="/" title="Flowly Creative">
-      <Icon icon={icons.CROWN} color="#fff" size={36} altText="Flowly Creative" />
+      <Icon
+        icon={icons.CROWN}
+        color="#fff"
+        size={36}
+        altText="Flowly Creative"
+      />
     </Link>
     <Button isMenuVisible={props.visibility} onClick={props.onMenuBtnClick} />
   </StyledHeader>
