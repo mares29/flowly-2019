@@ -108,6 +108,11 @@ const StyledNav = styled.nav`
     li {
       margin-bottom: 60px;
       opacity: 0;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
       a {
         color: ${colors.flowly};
       }

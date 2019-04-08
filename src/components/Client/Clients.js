@@ -3,10 +3,15 @@ import React from "react"
 import styled from "styled-components"
 import ClientList from "../Client/ClientList"
 import { H3, P } from "../Typography/Typography"
+import breakpoints from "../../utils/breakpoints"
 
 const StyledLogosWrap = styled.div`
   display: flex;
   margin-top: 140px;
+
+  @media (max-width: ${breakpoints.iphone}) {
+    flex-direction: column;
+  }
 
   .content {
     width: 400px;
@@ -15,6 +20,10 @@ const StyledLogosWrap = styled.div`
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
+
+    @media (max-width: ${breakpoints.iphone}) {
+      width: 100%;
+    }
   }
 `
 

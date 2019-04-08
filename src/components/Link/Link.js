@@ -1,11 +1,11 @@
-import Link from 'gatsby-link'
-import PropTypes from 'prop-types'
-import React from 'react'
-import styled from 'styled-components'
-import icoRightArrow from '../../assets/images/arrow-right.svg'
-import colors from '../../constants/colors'
-import fonts from '../../constants/fonts'
-import breakpoints from '../../utils/breakpoints'
+import Link from "gatsby-link"
+import PropTypes from "prop-types"
+import React from "react"
+import styled from "styled-components"
+import icoRightArrow from "../../assets/images/arrow-right.svg"
+import colors from "../../constants/colors"
+import fonts from "../../constants/fonts"
+import breakpoints from "../../utils/breakpoints"
 
 export const StyledLink = styled(Link)`
   font-family: ${fonts.head.bold};
@@ -25,19 +25,23 @@ export const StyledLink = styled(Link)`
     z-index: 4;
 
     &:after {
-      content: ' ';
+      content: " ";
       position: absolute;
       right: -30px;
-      top: 0;
+      bottom: 0;
       width: 20px;
-      height: 100%;
+      height: 30px;
       background: url(${icoRightArrow}) center no-repeat;
       background-size: contain;
+
+      @media (max-width: ${breakpoints.iphone}) {
+        height: 20px;
+      }
     }
   }
 
   &:after {
-    content: ' ';
+    content: " ";
     position: absolute;
     bottom: 0;
     left: 0;

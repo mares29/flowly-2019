@@ -3,18 +3,30 @@ import Img from "gatsby-image"
 import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
+import breakpoints from "../../utils/breakpoints"
 
 const StyledClientList = styled.div`
   flex: 1;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+
+  @media (max-width: ${breakpoints.iphone}) {
+    flex-direction: column;
+  }
+
   div {
     width: ${props => (props.horizontal ? "auto" : "50%")};
     padding: 20px 0;
     text-align: right;
     opacity: 0.6;
     transition: opacity 200ms;
+
+    @media (max-width: ${breakpoints.iphone}) {
+      width: 100%;
+      text-align: center;
+    }
+
     &:hover {
       opacity: 1;
     }

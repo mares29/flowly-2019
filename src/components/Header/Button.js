@@ -4,6 +4,7 @@ import styled from "styled-components"
 import colors from "../../constants/colors"
 import fonts from "../../constants/fonts"
 import Cross from "./Cross"
+import breakpoints from "../../utils/breakpoints"
 
 const StyledButton = styled.button`
   display: flex;
@@ -19,6 +20,10 @@ const StyledButton = styled.button`
   outline: none;
   transition: 200ms all;
   padding: 0;
+
+  @media (max-width: ${breakpoints.iphone}) {
+    margin-right: -20px;
+  }
 
   svg {
     margin-left: -10px;
