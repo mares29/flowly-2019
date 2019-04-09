@@ -6,7 +6,7 @@ import BackgroundImage from "../BackgroundImage/BackgroundImage"
 
 const StyledWrapper = styled.div`
   width: 100%;
-  height: 40vh;
+  height: 50vh;
   padding: 0 40px;
   display: flex;
   margin-bottom: 80px;

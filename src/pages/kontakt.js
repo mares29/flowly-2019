@@ -1,31 +1,33 @@
 import { graphql } from "gatsby"
 import React from "react"
 import styled from "styled-components"
+import map from "../assets/images/map.svg"
 import Button from "../components/Button/Button"
 import Container from "../components/Container/Container"
 import Form from "../components/Form/Form"
 import Input from "../components/Form/Input"
 import Textarea from "../components/Form/Textarea"
+import BackgroundTriables from "../components/Graphics/BackgroundTriables"
 import Column from "../components/Grid/Column"
 import Row from "../components/Grid/Row"
 import Hero from "../components/Hero/Hero"
+import Icon from "../components/Icon/Icon"
+import Link from "../components/Link/Link"
 import Main from "../components/Main/Main"
 import MemberRowList from "../components/Member/MemberRowList"
 import Section from "../components/Section/Section"
-import { H2, P } from "../components/Typography/Typography"
+import { H2, H4, P } from "../components/Typography/Typography"
+import colors from "../constants/colors"
+import fonts from "../constants/fonts"
+import icons from "../constants/icons"
 import breakpoints from "../utils/breakpoints"
 
-const StyledAboutText = styled(P)`
-  width: 1000px;
+const StyledMapText = styled(P)`
+  width: 40%;
 
   @media (max-width: ${breakpoints.iphone}) {
     width: 100%;
   }
-`
-const StyledMap = styled.div`
-  width: 100%;
-  height: 65vh;
-  opacity: 0.6;
 `
 const FormButtonWrap = styled.div`
   display: flex;
@@ -38,6 +40,65 @@ const StyledFormButton = styled(FormButton)`
 
   @media (max-width: ${breakpoints.iphone}) {
     bottom: -30px;
+  }
+`
+const MapWrap = styled.div`
+  position: absolute;
+  top: 80px;
+  bottom: 5%;
+  left: 5%;
+  right: 0%;
+  @media (max-width: ${breakpoints.iphone}) {
+    top: 250px;
+  }
+`
+const StyledMapSection = styled(Section)`
+  justify-content: flex-start;
+  padding-top: 60px;
+`
+const StyledContactWrap = styled.div`
+  position: relative;
+  display: flex;
+  margin-bottom: 10px;
+  padding: 50px 0 50px;
+
+  & > div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  @media (max-width: ${breakpoints.ipad}) {
+    flex-direction: column;
+    justify-content: center;
+  }
+`
+const StyledContact = styled.div`
+  position: relative;
+  flex: 1;
+  display: flex;
+  text-align: ${props => props.align};
+  margin-bottom: 50px;
+
+  p {
+    display: inline-block;
+    position: relative;
+    margin: 0;
+    color: #fff;
+    line-height: ${props => (props.small ? "41px" : "31px")};
+    font-size: ${props => (props.small ? "26px" : "32px")};
+    font-family: ${props => (props.small ? fonts.text.light : fonts.head.bold)};
+
+    @media (max-width: ${breakpoints.desktop}) {
+      font-size: ${props => (props.small ? "20px" : "26px")};
+    }
+  }
+
+  &:first-of-type {
+    svg {
+      align-self: flex-start;
+    }
   }
 `
 
@@ -55,34 +116,85 @@ const ContactPage = ({ data }) => (
     <Main>
       <Section long>
         <Container>
-          <H2>
-            Pokud je skvělý tým,{" "}
-            <span className="break">je skvělá nálada a parádní práce</span>
-          </H2>
-          <StyledAboutText>
-            Nemusíte obvolávat množství lidí v agentuře. S námi jednáte napřímo.
-            Kancelářemi jsou nám kavárny, restaurace a jiné obytné prostory, za
-            které k našemu potěšení neplatíme nájem. K dobře{" "}
-            <strong>odvedené práci</strong> nám stačí zásuvka, počítač a heslo „
-            s chutí do toho, půl je hotovo“. Jsme parta mladých lidí, která
-            tvoří dohromady kompletní organismus pro tvorbu webů včetně
-            marketingu. Jsme dobří, <strong>jsme freelanceři</strong>{" "}
-            spoléhající se na vlastní um.
-          </StyledAboutText>
+          <H4>Ozvěte se nám</H4>
+
+          <StyledContactWrap>
+            <div>
+              <StyledContact>
+                <Icon
+                  icon={icons.PHONE}
+                  rightMargin={20}
+                  color={colors.creative}
+                  size={40}
+                  altText="telefon"
+                />
+                <p>+420 728 884 879</p>
+              </StyledContact>
+              <StyledContact>
+                <Icon
+                  icon={icons.EMAIL}
+                  rightMargin={20}
+                  color={colors.creative}
+                  size={40}
+                  altText="email"
+                />
+                <p>jsme@flowly.cz</p>
+              </StyledContact>
+              <StyledContact small>
+                <Icon
+                  icon={icons.MAP_PIN}
+                  rightMargin={20}
+                  color={colors.creative}
+                  size={40}
+                  altText="adresa"
+                />
+                <div style={{ paddingTop: "4px" }}>
+                  <Link to="#form">Napište nám</Link>
+                </div>
+              </StyledContact>
+            </div>
+            <div>
+              <StyledContact small>
+                <Icon
+                  icon={icons.MAP_PIN}
+                  rightMargin={20}
+                  color={colors.creative}
+                  size={40}
+                  altText="adresa"
+                />
+                <p>
+                  Areál Aspery
+                  <br />
+                  Křižíkova 734/1
+                  <br />
+                  370 01 České Budějovice
+                </p>
+              </StyledContact>
+            </div>
+          </StyledContactWrap>
         </Container>
       </Section>
-
-      <Section long>
+      <StyledMapSection>
+        <BackgroundTriables bottom="-50%" top="-10%" right />
+        <MapWrap>
+          <img
+            alt="Vzdálenost pro nás není problém | Flowly Creative"
+            src={map}
+            width="100%"
+          />
+        </MapWrap>
         <Container>
           <H2>
-            Kudy se <span className="break">k nám dostanete?</span>
+            Vzdálenost pro nás <span className="break">není problém</span>
           </H2>
+          <StyledMapText small>
+            Nemusíte obvolávat množství lidí v agentuře. S námi jednáte napřímo.
+            Kancelářemi jsou nám kavárny, restaurace a jiné obytné prostory.
+          </StyledMapText>
         </Container>
+      </StyledMapSection>
 
-        <StyledMap />
-      </Section>
-
-      <Section long>
+      <Section id="form" long>
         <Container>
           <H2>
             Napište nám zprávu <span className="break">pomocí formuláře</span>

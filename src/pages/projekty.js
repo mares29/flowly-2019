@@ -23,10 +23,10 @@ const StyledSection = styled(Section)`
 const pageData = {
   heading: {
     first: "Jedeme",
-    second: "bomby, které inspirují",
+    second: "bomby",
   },
   text:
-    "Tým nezávislých a kreativních profesionálů pro Váš web & marketing. Tým nezávislých a kreativních profesionálů pro Váš web & marketing",
+    "Jdeme do toho naplno a na svou práci jsme hrdí. Baví nás spolupráce s lidmi, se kterými můžeme sdílet nadšení pro věc a vzájemně se inspirovat.",
   list: [
     {
       heading: "GLS Česká republika",

@@ -70,9 +70,29 @@ const StyledMember = styled.article`
   @media (max-width: ${breakpoints.iphone}) {
     width: 100%;
     margin: 30px 0 0 0;
+    flex-direction: column;
 
     &:nth-child(even) {
       margin: 30px 0 0 0;
+      flex-direction: column;
+
+      .content {
+        padding-right: 0;
+          text-align: left;
+
+        .username {
+          margin: -170px 0 60px 0;
+        }
+      }
+    }
+
+    .content {
+      padding-left: 0;
+
+      .username {
+        margin: -170px 0 60px 0;
+        line-height: 42px;
+      }
     }
   }
 `

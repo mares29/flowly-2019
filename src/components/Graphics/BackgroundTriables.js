@@ -5,9 +5,9 @@ import TrianglesBGImg from "../../assets/images/triangles_bg.svg"
 const BackgroundTriangles = styled.div`
   position: absolute;
   left: 0;
-  bottom: 10%;
+  bottom: ${props => (props.bottom ? props.bottom : "10%")};
+  top: ${props => (props.top ? props.top : "10%")};
   width: 100%;
-  height: ${props => (props.height ? props.height : "80%")};
   background: url("${TrianglesBGImg}")  center center no-repeat;
   background-size: 100% 100%;
   z-index: -1;

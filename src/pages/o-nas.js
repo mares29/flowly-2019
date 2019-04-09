@@ -19,50 +19,6 @@ const StyledAboutText = styled(P)`
     width: 100%;
   }
 `
-const StyledServicesList = styled.div`
-  display: flex;
-  flex-direction: column;
-`
-const StyledServiceItem = styled.div`
-  flex: 1;
-  margin-bottom: 180px;
-  padding-right: 40%;
-
-  &:nth-child(even) {
-    padding-right: 0;
-    padding-left: 40%;
-  }
-
-  @media (max-width: ${breakpoints.desktop}) {
-    padding-right: 0;
-    &:nth-child(even) {
-      padding-left: 0;
-    }
-  }
-`
-const StyledIcon = styled.img`
-  float: left;
-  margin-right: 65px;
-`
-const StyledSection = styled(Section)`
-  padding: 200px 0;
-`
-const StyledSubHeroP = styled(P)`
-  max-width: 70%;
-  @media (max-width: ${breakpoints.iphone}) {
-    max-width: 100%;
-  }
-`
-const StyledTriangles = styled.div`
-  position: absolute;
-  right: 16%;
-  bottom: 5%;
-  width: 40%;
-  height: 100%;
-  background: url(${TrianglesImg}) center no-repeat;
-  background-size: contain;
-  opacity: 0.3;
-`
 
 const pageData = {
   heading: {
@@ -70,7 +26,7 @@ const pageData = {
     second: "blázni do webu",
   },
   text:
-    "Tým nezávislých a kreativních profesionálů pro Váš web & marketing. Tým nezávislých a kreativních profesionálů pro Váš web & marketing",
+    "Tým zkušených, nezávislých a kreativních profesionálů pro váš web a online marketing.",
 }
 
 const AboutUsPage = ({ data }) => (
@@ -86,7 +42,7 @@ const AboutUsPage = ({ data }) => (
         <Container>
           <H2>
             Pokud je skvělý tým,{" "}
-            <span className="break">je skvělá nálada a parádní práce</span>
+            <span className="break">je dobrá nálada a pohodová spolupráce</span>
           </H2>
           <StyledAboutText>
             Nemusíte obvolávat množství lidí v agentuře. S námi jednáte napřímo.

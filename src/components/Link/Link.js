@@ -1,13 +1,13 @@
 import Link from "gatsby-link"
 import PropTypes from "prop-types"
 import React from "react"
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import icoRightArrow from "../../assets/images/arrow-right.svg"
 import colors from "../../constants/colors"
 import fonts from "../../constants/fonts"
 import breakpoints from "../../utils/breakpoints"
 
-export const StyledLink = styled(Link)`
+const StyledLinkBase = css`
   font-family: ${fonts.head.bold};
   color: #fff;
   text-decoration: none;
@@ -58,12 +58,30 @@ export const StyledLink = styled(Link)`
     }
   }
 `
+export const StyledLink = styled(Link)`
+  ${StyledLinkBase}
+`
+const StyledA = styled.a`
+  ${StyledLinkBase}
+`
 
-const MyLink = ({ to, children }) => (
-  <StyledLink to={to}>
-    <span>{children}</span>
-  </StyledLink>
-)
+const MyLink = ({ to, children, ...other }) => {
+  const internal = /^\/(?!\/)/.test(to)
+
+  if (internal) {
+    return (
+      <StyledLink to={to} {...other}>
+        <span>{children}</span>
+      </StyledLink>
+    )
+  }
+
+  return (
+    <StyledA href={to} {...other}>
+      <span>{children}</span>
+    </StyledA>
+  )
+}
 
 MyLink.propTypes = {
   to: PropTypes.string.isRequired,

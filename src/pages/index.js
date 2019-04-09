@@ -85,7 +85,7 @@ const IndexPage = ({ data }) => (
       </Section>
 
       <Section long>
-        <BackgroundTriangles height="100%" right />
+        <BackgroundTriangles bottom="0" top="0" right />
         <Container>
           <H2>
             Baví nás dělat projekty,{" "}
