@@ -8,7 +8,7 @@ export default styled.input`
   background: transparent;
   padding: 10px 0 11px;
   border-bottom: solid 1px ${colors.creative};
-  color: rgba(255, 255, 255, 0.55);
+  color: #b093d6;
   margin-bottom: 40px;
   outline: none;
   transition: all 200ms;
@@ -16,5 +16,6 @@ export default styled.input`
   &:focus {
     border-bottom: solid 2px ${colors.creative};
     padding: 10px 0 10px;
+    color: ${colors.creative};
   }
 `

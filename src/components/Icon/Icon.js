@@ -3,8 +3,8 @@ import React from 'react'
 import styled from 'styled-components'
 
 const StyledSvg = styled.svg`
-  display: 'inline-block';
-  vertical-align: 'middle';
+  display: inline-block;
+  vertical-align: middle;
   margin-left: ${props => props.leftMargin || 0}px;
   margin-right: ${props => props.rightMargin || 0}px;
   path {

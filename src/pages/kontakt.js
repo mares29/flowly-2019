@@ -34,8 +34,7 @@ const FormButtonWrap = styled.div`
   justify-content: center;
   flex: 1;
 `
-const FormButton = Button.withComponent("button")
-const StyledFormButton = styled(FormButton)`
+const StyledFormButton = styled(Button)`
   bottom: -40px;
 
   @media (max-width: ${breakpoints.iphone}) {
@@ -247,6 +246,13 @@ const ContactPage = ({ data }) => (
             <Row>
               <FormButtonWrap>
                 <StyledFormButton type="submit">
+                  <Icon
+                    icon={icons.EMAIL}
+                    rightMargin={10}
+                    color="#fff"
+                    size={28}
+                    altText="email"
+                  />
                   Odeslat zprávu
                 </StyledFormButton>
               </FormButtonWrap>

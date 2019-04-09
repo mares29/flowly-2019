@@ -15,10 +15,15 @@ import HeroImages from "../components/HeroImages/HeroImages"
 import Icon from "../components/Icon/Icon"
 import Main from "../components/Main/Main"
 import Section from "../components/Section/Section"
-import { H2, H3, P, Ul } from "../components/Typography/Typography"
+import { H2, H3, H5, P, Ul } from "../components/Typography/Typography"
 import icons from "../constants/icons"
 import breakpoints from "../utils/breakpoints"
 import colors from "../constants/colors"
+import strategy from "../assets/images/icons/strategy.svg"
+import research from "../assets/images/icons/research.svg"
+import design from "../assets/images/icons/design.svg"
+import development from "../assets/images/icons/development.svg"
+import marketing from "../assets/images/icons/marketing.svg"
 
 const StyledAboutText = styled(P)`
   width: 1000px;
@@ -76,6 +81,88 @@ const StyledNotSoWideH2 = styled(H2)`
   max-width: 80%;
   @media (max-width: ${breakpoints.iphone}) {
     max-width: 100%;
+  }
+`
+const StyledWaterfallSection = styled(StyledSection)`
+  padding-bottom: 0;
+`
+const StyledWaterfall = styled.div`
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 80px 0 0;
+`
+const StyledWaterfallItem = styled.div`
+  position: relative;
+  width: 19%;
+  position: relative;
+  text-align: center;
+  background: ${colors.flowly};
+  z-index: 1;
+  &:after {
+    content: " ";
+    position: absolute;
+    top: 50px;
+    right: -55%;
+    width: 70%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.15);
+  }
+  &:before {
+    content: " ";
+    position: absolute;
+    top: 51px;
+    right: -55%;
+    width: 1px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.15);
+  }
+  img {
+    height: 110px;
+    margin-bottom: 10px;
+  }
+  p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  h5 {
+    margin-bottom: 20px;
+  }
+  &:nth-of-type(2) {
+    margin-top: 120px;
+  }
+  &:nth-of-type(3) {
+    margin-top: 240px;
+  }
+  &:nth-of-type(4) {
+    margin-top: 360px;
+  }
+  &:nth-of-type(5) {
+    margin-top: 480px;
+    &:before,
+    &:after {
+      display: none;
+    }
+  }
+`
+const StyledWaterfallNote = styled.div`
+  position: absolute;
+  bottom: 30px;
+  left: 30%;
+  right: 30%;
+  height: 380px;
+  border: dashed 1px rgba(255, 255, 255, 0.15);
+  border-top: none;
+  z-index: 0;
+  p {
+    position: absolute;
+    width: 250px;
+    left: calc(-19% - 250px);
+    bottom: 80px;
+    font-size: 16px;
+    line-height: 24px;
+    color: #8b6db1;
   }
 `
 
@@ -173,6 +260,14 @@ const ServicesPage = ({ data }) => (
                 <li>Vývoj mobilních aplikací</li>
               </Ul>
               <StyledNote>
+                <Icon
+                  icon={icons.NOTE}
+                  leftMargin={0}
+                  rightMargin={10}
+                  color={colors.creative}
+                  size={24}
+                  altText="poznamka"
+                />
                 V této oblasti spolupracujeme s agenturami jako je{" "}
                 <a
                   href="https://www.argo22.com/"
@@ -203,6 +298,14 @@ const ServicesPage = ({ data }) => (
                 <li>Bussiness analytika</li>
               </Ul>
               <StyledNote>
+                <Icon
+                  icon={icons.NOTE}
+                  leftMargin={0}
+                  rightMargin={10}
+                  color={colors.creative}
+                  size={24}
+                  altText="poznamka"
+                />
                 V této oblasti spolupracujeme s agenturami jako je{" "}
                 <a
                   href="https://www.argo22.com/"
@@ -248,15 +351,21 @@ const ServicesPage = ({ data }) => (
             Inspirujeme se posledními trendy a moderními postupy.
           </StyledSubHeroP>
 
-          <Button>
-            <Icon icon={icons.CAFE} rightMargin={20} color="#fff" size={32} />{" "}
+          <Button to="/kontakt#form">
+            <Icon
+              icon={icons.CAFE}
+              rightMargin={20}
+              color="#fff"
+              size={32}
+              altText="kafe"
+            />{" "}
             Pojďme se potkat
           </Button>
         </Container>
         <GraphicTriangles />
       </StyledSection>
 
-      <StyledSection long>
+      <StyledWaterfallSection long>
         <Container>
           <StyledNotSoWideH2>
             Preciznost každého produktu je pro nás to{" "}
@@ -270,7 +379,64 @@ const ServicesPage = ({ data }) => (
             semper rutrum.
           </StyledSubHeroP>
         </Container>
-      </StyledSection>
+
+        <Container>
+          <StyledWaterfall>
+            <StyledWaterfallItem>
+              <img src={strategy} alt="strategie | Flowly Creative" />
+              <H5>Strategie & plánování</H5>
+              <P small>
+                Tým závislých a kreativních profesionálů pro Váš web a
+                marketing. Tým bla ble blů.
+              </P>
+            </StyledWaterfallItem>
+
+            <StyledWaterfallItem>
+              <img src={research} alt="výzkum | Flowly Creative" />
+              <H5>Analytika & výzku</H5>
+              <P small>
+                Tým závislých a kreativních profesionálů pro Váš web a
+                marketing. Tým bla ble blů.
+              </P>
+            </StyledWaterfallItem>
+
+            <StyledWaterfallItem>
+              <img src={design} alt="UX | Flowly Creative" />
+              <H5>Návrh & testování</H5>
+              <P small>
+                Tým závislých a kreativních profesionálů pro Váš web a
+                marketing. Tým bla ble blů.
+              </P>
+            </StyledWaterfallItem>
+
+            <StyledWaterfallItem>
+              <img src={development} alt="vývoj | Flowly Creative" />
+              <H5>Vývoj & produkce</H5>
+              <P small>
+                Tým závislých a kreativních profesionálů pro Váš web a
+                marketing. Tým bla ble blů.
+              </P>
+            </StyledWaterfallItem>
+
+            <StyledWaterfallItem>
+              <img src={marketing} alt="marketing | Flowly Creative" />
+              <H5>Marketing</H5>
+              <P small>
+                Tým závislých a kreativních profesionálů pro Váš web a
+                marketing. Tým bla ble blů.
+              </P>
+            </StyledWaterfallItem>
+
+            <StyledWaterfallNote>
+              <P>
+                Nemusíte se odvolávat na množství lidí v agentuře. S námi
+                jednáte napřímo. Kancelářemi jsou nám kavárny, restaurace a jiné
+                obytné prostory.
+              </P>
+            </StyledWaterfallNote>
+          </StyledWaterfall>
+        </Container>
+      </StyledWaterfallSection>
     </Main>
   </React.Fragment>
 )

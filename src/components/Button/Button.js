@@ -1,8 +1,10 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
+import React from "react"
+import PropTypes from "prop-types"
 import colors from "../../constants/colors"
 import breakpoints from "../../utils/breakpoints"
 
-export default styled.a`
+const BaseButton = css`
   display: block;
   background: ${colors.creative};
   position: relative;
@@ -23,3 +25,28 @@ export default styled.a`
     height: 70px;
   }
 `
+const StyledButton = styled.button`
+  ${BaseButton}
+`
+const StyledA = styled.a`
+  ${BaseButton}
+`
+
+const Button = ({ to, children, ...other }) => {
+  if (to) {
+    return (
+      <StyledA href={to} {...other}>
+        {children}
+      </StyledA>
+    )
+  }
+
+  return <StyledButton {...other}>{children}</StyledButton>
+}
+
+Button.propTypes = {
+  to: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+}
+
+export default Button

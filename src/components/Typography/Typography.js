@@ -63,6 +63,21 @@ export const H4 = styled.h4`
     line-height: 26px;
   }
 `
+export const H5 = styled.h5`
+  color: #fff;
+  font-size: 20px;
+  line-height: 36px;
+  margin-bottom: 30px;
+
+  span {
+    color: ${colors.creative};
+  }
+
+  @media (max-width: ${breakpoints.iphone}) {
+    font-size: 16px;
+    line-height: 26px;
+  }
+`
 export const P = styled.p`
   color: #fff;
   font-size: ${props => (props.small ? 18 : 24)}px;
