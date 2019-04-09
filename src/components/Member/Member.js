@@ -55,9 +55,10 @@ const StyledMember = styled.article`
 
       p,
       h3,
-      .links {
+      .links div {
         text-align: right;
         justify-content: flex-end;
+        align-items: center;
       }
 
       .username {
@@ -78,7 +79,7 @@ const StyledMember = styled.article`
 
       .content {
         padding-right: 0;
-          text-align: left;
+        text-align: left;
 
         .username {
           margin: -170px 0 60px 0;
@@ -99,6 +100,18 @@ const StyledMember = styled.article`
 const StyledLinks = styled.div`
   flex: 1;
   display: flex;
+  align-items: flex-start;
+  div {
+    display: flex;
+    align-items: center;
+    p, 
+    img {
+      margin-bottom: 0 !important;
+    }
+    p strong {
+      color: #fff;
+    }
+  }
 `
 
 const Member = ({
@@ -118,9 +131,14 @@ const Member = ({
       <p className="username">“{username}”</p>
       <P small>{bio}</P>
       <StyledLinks className="links">
-        {links.map(url => (
-          <Link key={url.value} url={url.value} />
-        ))}
+        <div>
+          <P small>
+            <strong>Sledujte mě:</strong>
+          </P>
+          {links.map(url => (
+            <Link key={url.value} url={url.value} />
+          ))}
+        </div>
       </StyledLinks>
       <H3>
         {firstname} <span>{surname}</span>

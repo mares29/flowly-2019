@@ -256,7 +256,7 @@ const Footer = ({ bgImg }) => (
     <StyledCopyWrap>
       <Container>
         <StyledCopy>
-          <p>© 2018 Flowly Creative</p>
+          <p>© 2015 Flowly Creative</p>
           <a href="#top">
             nahoru{" "}
             <Icon

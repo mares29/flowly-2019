@@ -37,7 +37,7 @@ const Hero = ({ bgImg }) => (
         online marketing.
       </StyledHoreP>
     </Container>
-    <StyledButton big href="#obsah">
+    <StyledButton big to="#obsah">
       Více o nás{" "}
       <Icon
         icon={icons.ARROW_DOWN}
