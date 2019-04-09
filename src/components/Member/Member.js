@@ -53,6 +53,10 @@ const StyledMember = styled.article`
       padding-left: 0;
       padding-right: 60px;
 
+      .links {
+        justify-content: flex-end;
+      }
+
       p,
       h3,
       .links div {
@@ -104,7 +108,7 @@ const StyledLinks = styled.div`
   div {
     display: flex;
     align-items: center;
-    p, 
+    p,
     img {
       margin-bottom: 0 !important;
     }
