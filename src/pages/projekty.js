@@ -14,6 +14,7 @@ import Section from "../components/Section/Section"
 import Testemonials from "../components/Testemonial/Testemonials"
 import { H2, Hr, P } from "../components/Typography/Typography"
 import { clients } from "../utils/fakeData"
+import Seo from "../components/Seo/Seo"
 
 const StyledSection = styled(Section)`
   padding-top: 0;
@@ -47,7 +48,8 @@ const pageData = {
 }
 
 const ServicesPage = ({ data }) => (
-  <div>
+  <React.Fragment>
+    <Seo title="Projekty | Flowly Creative" description="" />
     <Hero {...pageData} />
     <Main>
       <StyledSection long>
@@ -104,7 +106,7 @@ const ServicesPage = ({ data }) => (
         </Container>
       </Section>
     </Main>
-  </div>
+  </React.Fragment>
 )
 
 export default ServicesPage

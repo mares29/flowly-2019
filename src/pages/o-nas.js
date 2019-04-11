@@ -11,6 +11,7 @@ import MemberList from "../components/Member/MemberList"
 import Section from "../components/Section/Section"
 import { H2, P } from "../components/Typography/Typography"
 import breakpoints from "../utils/breakpoints"
+import Seo from "../components/Seo/Seo"
 
 const StyledAboutText = styled(P)`
   width: 1000px;
@@ -31,6 +32,7 @@ const pageData = {
 
 const AboutUsPage = ({ data }) => (
   <React.Fragment>
+    <Seo title="O nás | Flowly Creative" description="" />
     <Hero {...pageData} />
     <Main>
       <HeroImages

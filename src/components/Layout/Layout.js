@@ -1,6 +1,5 @@
 import { graphql, StaticQuery } from "gatsby"
 import React from "react"
-import Helmet from "react-helmet"
 import ContactUsBar from "../ContactUsBar/ContactUsBar"
 import Footer from "../Footer/Footer"
 import Header from "../Header/Header"
@@ -42,16 +41,6 @@ class Layout extends React.PureComponent {
         `}
         render={data => (
           <Page>
-            <Helmet
-              charSet="utf-8"
-              title={title}
-              meta={[
-                { name: "description", content: "Sample" },
-                { name: "keywords", content: "sample, something" },
-              ]}
-            >
-              <html lang="cs" />
-            </Helmet>
             <Menu
               visibility={this.state.isMenuVisible}
               onMenuBtnClick={this.handleToggleMenu}

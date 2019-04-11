@@ -21,6 +21,7 @@ import colors from "../constants/colors"
 import fonts from "../constants/fonts"
 import icons from "../constants/icons"
 import breakpoints from "../utils/breakpoints"
+import Seo from "../components/Seo/Seo"
 
 const StyledMapText = styled(P)`
   width: 40%;
@@ -111,6 +112,7 @@ const pageData = {
 }
 const ContactPage = ({ data }) => (
   <React.Fragment>
+    <Seo title="Kontaktujte nás | Flowly Creative" description="" />
     <Hero {...pageData} />
     <Main>
       <Section long>

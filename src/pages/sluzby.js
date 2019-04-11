@@ -24,6 +24,7 @@ import research from "../assets/images/icons/research.svg"
 import design from "../assets/images/icons/design.svg"
 import development from "../assets/images/icons/development.svg"
 import marketing from "../assets/images/icons/marketing.svg"
+import Seo from "../components/Seo/Seo"
 
 const StyledAboutText = styled(P)`
   width: 1000px;
@@ -177,6 +178,7 @@ const pageData = {
 
 const ServicesPage = ({ data }) => (
   <React.Fragment>
+    <Seo title="Služby | Flowly Creative" description="" />
     <Hero {...pageData} />
     <Main>
       <HeroImages

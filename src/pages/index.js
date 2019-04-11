@@ -15,6 +15,7 @@ import Testemonials from "../components/Testemonial/Testemonials"
 import { H2, P } from "../components/Typography/Typography"
 import breakpoints from "../utils/breakpoints"
 import { clients } from "../utils/fakeData"
+import Seo from "../components/Seo/Seo"
 
 const StyledAboutText = styled(P)`
   width: 80%;
@@ -46,6 +47,10 @@ const StyledRefWrapper = styled.div`
 
 const IndexPage = ({ data }) => (
   <React.Fragment>
+    <Seo
+      title={data.site.siteMetadata.title}
+      description={data.site.siteMetadata.description}
+    />
     <Hero bgImg={data.file} hp />
     <Main id="obsah">
       <Section>
@@ -127,6 +132,8 @@ export const homepageQuery = graphql`
     site {
       siteMetadata {
         title
+        description
+        author
       }
     }
     allCockpitMember {
