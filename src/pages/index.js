@@ -17,6 +17,10 @@ import breakpoints from "../utils/breakpoints"
 import { clients } from "../utils/fakeData"
 import Seo from "../components/Seo/Seo"
 
+const StyledSection = styled(Section)`
+  padding-top: 200px;
+  padding-bottom: 100px;
+`
 const StyledAboutText = styled(P)`
   width: 80%;
 
@@ -53,7 +57,7 @@ const IndexPage = ({ data }) => (
     />
     <Hero bgImg={data.file} hp />
     <Main id="obsah">
-      <Section>
+      <StyledSection>
         <Triangles opacity={0.1} />
         <Container>
           <H2>
@@ -87,7 +91,7 @@ const IndexPage = ({ data }) => (
             </li>
           </StyledLinks>
         </Container>
-      </Section>
+      </StyledSection>
 
       <Section long>
         <BackgroundTriangles bottom="0" top="0" right />

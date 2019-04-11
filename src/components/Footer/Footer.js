@@ -118,7 +118,7 @@ const StyledNav = styled.nav`
 `
 const StyledLove = styled.p`
   position: relative;
-  margin-top: 270px;
+  margin-top: 150;
   text-align: center;
   font-family: ${fonts.text.light};
   font-size: 18px;
@@ -136,7 +136,7 @@ const StyledCopyWrap = styled.div`
   position: relative;
   width: 100%;
   display: flex;
-  margin-top: 80px;
+  margin-top: 50px;
   justify-content: center;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding: 10px 0;

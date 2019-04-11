@@ -24,7 +24,7 @@ class Layout extends React.PureComponent {
   }
 
   render() {
-    const { title, children } = this.props
+    const { children } = this.props
 
     return (
       <StaticQuery
