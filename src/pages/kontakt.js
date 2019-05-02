@@ -112,7 +112,10 @@ const pageData = {
 }
 const ContactPage = ({ data }) => (
   <React.Fragment>
-    <Seo title="Kontaktujte nás | Flowly Creative" description="" />
+    <Seo
+      title="Kontaktujte nás | Flowly.cz"
+      description="Vzdálenost pro nás není problém, máme klienty z celé ČR. Využíváme možností vzdálené práce i komunikace, ale občas si rádi uděláme výlet nebo vás přivítáme u nás v jižních Čechách."
+    />
     <Hero {...pageData} />
     <Main>
       <Section long>

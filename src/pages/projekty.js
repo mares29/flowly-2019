@@ -49,7 +49,10 @@ const pageData = {
 
 const ServicesPage = ({ data }) => (
   <React.Fragment>
-    <Seo title="Projekty | Flowly Creative" description="" />
+    <Seo
+      title="Naše reference? Jedeme bomy! | Flowly.cz"
+      description="Rozhodně se nebojíme velkých výzev. Jdeme do toho naplno a na svou práci jsme hrdí. Baví nás spolupráce s lidmi, se kterými můžeme sdílet nadšení pro věc a vzájemně se inspirovat."
+    />
     <Hero {...pageData} />
     <Main>
       <StyledSection long>

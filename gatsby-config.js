@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Flowly Creative - tým zkušených, nezávislých a kreativních profesionálů pro váš web a online marketing`,
-    description: `Tým zkušených, nezávislých a kreativních profesionálů pro váš web a online marketing.`,
+    title: `Flowly.cz - Tým zkušených & kreativních lidí pro váš web`,
+    description: `Jsme tým nezávislých profesionálů pro váš web a online marketing! Vybíráme si projekty, pro které se můžeme nadchnout a posouvají nás dál v tom, co děláme.`,
     author: `flowly.cz`,
   },
   plugins: [

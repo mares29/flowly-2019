@@ -32,7 +32,10 @@ const pageData = {
 
 const AboutUsPage = ({ data }) => (
   <React.Fragment>
-    <Seo title="O nás | Flowly Creative" description="" />
+    <Seo
+      title="Poznejte tým Flowly Creative | Flowly.cz"
+      description="Jsme blázni do webů. Nebaví nás nudné věci, které nedávají smysl. Do každého projektu vkládáme kousek sebe a věříme, že je to znát. Inspirujeme se posledními trendy a moderními postupy."
+    />
     <Hero {...pageData} />
     <Main>
       <HeroImages

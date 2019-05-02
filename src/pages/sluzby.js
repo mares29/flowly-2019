@@ -178,7 +178,10 @@ const pageData = {
 
 const ServicesPage = ({ data }) => (
   <React.Fragment>
-    <Seo title="Služby | Flowly Creative" description="" />
+    <Seo
+      title="Tvorba webu a internetový marketing České Budějovice | Flowly.cz"
+      description="Soustředíme se na věci, které umíme nejlépe. Jsme specialisté na UX design, PPC a zbožové srovnávače, SEO a frontend development."
+    />
     <Hero {...pageData} />
     <Main>
       <HeroImages
