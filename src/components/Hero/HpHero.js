@@ -1,11 +1,11 @@
-import React from "react"
-import styled from "styled-components"
-import icons from "../../constants/icons"
-import BackgroundImage from "../BackgroundImage/BackgroundImage"
-import Button from "../Button/Button"
-import Container from "../Container/Container"
-import Icon from "../Icon/Icon"
-import { H1, HeroP } from "../Typography/Typography"
+import React from "react";
+import styled from "styled-components";
+import icons from "../../constants/icons";
+import BackgroundImage from "../BackgroundImage/BackgroundImage";
+import Button from "../Button/Button";
+import Container from "../Container/Container";
+import Icon from "../Icon/Icon";
+import { H1, HeroP } from "../Typography/Typography";
 
 const StyledHero = styled.div`
   height: 100vh;
@@ -16,6 +16,7 @@ const StyledHero = styled.div`
 `
 const StyledHoreP = styled(HeroP)`
   max-width: 50%;
+  margin-top: 40px;
 `
 const StyledButton = styled(Button)`
   position: absolute;

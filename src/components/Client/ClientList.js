@@ -1,9 +1,9 @@
-import { graphql, StaticQuery } from "gatsby"
-import Img from "gatsby-image"
-import PropTypes from "prop-types"
-import React from "react"
-import styled from "styled-components"
-import breakpoints from "../../utils/breakpoints"
+import { graphql, StaticQuery } from "gatsby";
+import Img from "gatsby-image";
+import PropTypes from "prop-types";
+import React from "react";
+import styled from "styled-components";
+import breakpoints from "../../utils/breakpoints";
 
 const StyledClientList = styled.div`
   flex: 1;
@@ -18,8 +18,9 @@ const StyledClientList = styled.div`
   div {
     width: ${props => (props.horizontal ? "auto" : "50%")};
     padding: 20px 0;
+    margin: 10px 0;
     text-align: right;
-    opacity: 0.6;
+    opacity: 0.5;
     transition: opacity 200ms;
 
     @media (max-width: ${breakpoints.iphone}) {

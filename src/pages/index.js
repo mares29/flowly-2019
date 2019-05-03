@@ -117,6 +117,7 @@ const IndexPage = ({ data }) => (
       </Section>
 
       <Section long>
+        <Triangles position="left" opacity={0.05} bottom="-10%" />
         <Container>
           <H2>
             Kdo se bude starat <span className="break">o Vaše projekty?</span>

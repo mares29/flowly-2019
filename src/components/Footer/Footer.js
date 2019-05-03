@@ -1,16 +1,16 @@
-import Link from "gatsby-link"
-import PropTypes from "prop-types"
-import React from "react"
-import styled from "styled-components"
-import icoFlowly from "../../assets/images/flowly-logo-footer.svg"
-import colors from "../../constants/colors"
-import fonts from "../../constants/fonts"
-import icons from "../../constants/icons"
-import breakpoints from "../../utils/breakpoints"
-import BackgroundImage from "../BackgroundImage/BackgroundImage"
-import Container from "../Container/Container"
-import Icon from "../Icon/Icon"
-import Social from "../Social/Social"
+import Link from "gatsby-link";
+import PropTypes from "prop-types";
+import React from "react";
+import styled from "styled-components";
+import icoFlowly from "../../assets/images/flowly-logo-footer.svg";
+import colors from "../../constants/colors";
+import fonts from "../../constants/fonts";
+import icons from "../../constants/icons";
+import breakpoints from "../../utils/breakpoints";
+import BackgroundImage from "../BackgroundImage/BackgroundImage";
+import Container from "../Container/Container";
+import Icon from "../Icon/Icon";
+import Social from "../Social/Social";
 
 const StyledFooter = styled.footer`
   width: 100%;
@@ -74,6 +74,7 @@ const StyledNavWrap = styled.div`
   position: relative;
   display: flex;
   justify-content: space-between;
+  margin-bottom: 20px;
 `
 const StyledNavLoveContainer = styled(Container)`
   flex: 1;
@@ -122,6 +123,7 @@ const StyledLove = styled.p`
   text-align: center;
   font-family: ${fonts.text.light};
   font-size: 18px;
+  margin-top: 40px;
   color: #fff;
 
   svg {
@@ -158,6 +160,15 @@ const StyledCopy = styled.div`
     text-decoration: underline;
     display: flex;
     align-items: center;
+    transition: all 200ms;
+
+    &:hover {
+      color: #fff;
+
+      path {
+        fill: #fff;
+      }
+    }
 
     img {
       margin-left: 10px;
@@ -169,6 +180,15 @@ const LogoWrap = styled.div`
   display: flex;
   flex: 1;
   justify-content: center;
+`
+
+const StyledVLine = styled.div`
+  width: 1px;
+  height: 100%;
+  background: #fff;
+  opacity: .1;
+  align-self: center;
+  flex: 1;
 `
 
 const Footer = ({ bgImg }) => (
@@ -239,6 +259,7 @@ const Footer = ({ bgImg }) => (
         </StyledNav>
         <Social />
       </StyledNavWrap>
+      <StyledVLine />
       <StyledLove>
         Oh, we{" "}
         <Icon
@@ -258,7 +279,7 @@ const Footer = ({ bgImg }) => (
         <StyledCopy>
           <p>© 2015 Flowly Creative</p>
           <a href="#top">
-            nahoru{" "}
+            Nahoru{" "}
             <Icon
               icon={icons.ARROW_UP}
               leftMargin={10}
