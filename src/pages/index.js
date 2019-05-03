@@ -1,21 +1,21 @@
-import { graphql } from "gatsby"
-import React from "react"
-import styled from "styled-components"
-import Clients from "../components/Client/Clients"
-import Container from "../components/Container/Container"
-import BackgroundTriangles from "../components/Graphics/BackgroundTriables"
-import Triangles from "../components/Graphics/Triangles"
-import Hero from "../components/Hero/Hero"
-import Link from "../components/Link/Link"
-import Main from "../components/Main/Main"
-import MemberCardList from "../components/Member/MemberCardList"
-import RefList from "../components/Reference/RefList"
-import Section from "../components/Section/Section"
-import Testemonials from "../components/Testemonial/Testemonials"
-import { H2, P } from "../components/Typography/Typography"
-import breakpoints from "../utils/breakpoints"
-import { clients } from "../utils/fakeData"
-import Seo from "../components/Seo/Seo"
+import { graphql } from "gatsby";
+import React from "react";
+import styled from "styled-components";
+import Clients from "../components/Client/Clients";
+import Container from "../components/Container/Container";
+import BackgroundTriangles from "../components/Graphics/BackgroundTriables";
+import Triangles from "../components/Graphics/Triangles";
+import Hero from "../components/Hero/Hero";
+import Link from "../components/Link/Link";
+import Main from "../components/Main/Main";
+import MemberCardList from "../components/Member/MemberCardList";
+import RefList from "../components/Reference/RefList";
+import Section from "../components/Section/Section";
+import Seo from "../components/Seo/Seo";
+import Testemonials from "../components/Testemonial/Testemonials";
+import { H2, P } from "../components/Typography/Typography";
+import breakpoints from "../utils/breakpoints";
+import { clients } from "../utils/fakeData";
 
 const StyledSection = styled(Section)`
   padding-top: 200px;
@@ -215,7 +215,7 @@ export const homepageQuery = graphql`
     }
     file(relativePath: { eq: "hero.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 1920, quality: 90) {
+        fluid(maxWidth: 1920, quality: 100) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }

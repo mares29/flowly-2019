@@ -1,11 +1,11 @@
-import { graphql, StaticQuery } from "gatsby"
-import React from "react"
-import ContactUsBar from "../ContactUsBar/ContactUsBar"
-import Footer from "../Footer/Footer"
-import Header from "../Header/Header"
-import Menu from "../Menu/Menu"
-import Page from "../Page/Page"
-import "./layout.css"
+import { graphql, StaticQuery } from "gatsby";
+import React from "react";
+import ContactUsBar from "../ContactUsBar/ContactUsBar";
+import Footer from "../Footer/Footer";
+import Header from "../Header/Header";
+import Menu from "../Menu/Menu";
+import Page from "../Page/Page";
+import "./layout.css";
 
 if (typeof window !== "undefined") {
   // Make scroll behavior of internal links smooth
@@ -32,7 +32,7 @@ class Layout extends React.PureComponent {
           query {
             file(relativePath: { eq: "footer.jpg" }) {
               childImageSharp {
-                fluid(maxWidth: 1920) {
+                fluid(maxWidth: 1920, quality: 100) {
                   ...GatsbyImageSharpFluid_noBase64
                 }
               }
