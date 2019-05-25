@@ -631,6 +631,7 @@ pre tt:after {
     url("../../assets/fonts/bwmodelica-bold-webfont.woff") format("woff"),
     url("../../assets/fonts/bwmodelica-bold-webfont.svg#bw_modelicabold")
       format("svg");
+  font-display: fallback;
   font-weight: normal;
   font-style: normal;
 }
@@ -642,6 +643,7 @@ pre tt:after {
     url("../../assets/fonts/bwmodelica-regular-webfont.woff") format("woff"),
     url("../../assets/fonts/bwmodelica-regular-webfont.svg#bw_modelicaregular")
       format("svg");
+  font-display: fallback;
   font-weight: normal;
   font-style: normal;
 }
@@ -651,6 +653,7 @@ pre tt:after {
   src: url("../../assets/fonts/hind-light-webfont.woff2") format("woff2"),
     url("../../assets/fonts/hind-light-webfont.woff") format("woff"),
     url("../../assets/fonts/hind-light-webfont.svg#hindlight") format("svg");
+  font-display: fallback;
   font-weight: normal;
   font-style: normal;
 }
@@ -660,6 +663,7 @@ pre tt:after {
   src: url("../../assets/fonts/hind-bold-webfont.woff2") format("woff2"),
     url("../../assets/fonts/hind-bold-webfont.woff") format("woff"),
     url("../../assets/fonts/hind-bold-webfont.svg#hindbold") format("svg");
+  font-display: fallback;
   font-weight: normal;
   font-style: normal;
 }
