@@ -1,21 +1,21 @@
-import { graphql } from "gatsby";
-import React from "react";
-import styled from "styled-components";
-import Clients from "../components/Client/Clients";
-import Container from "../components/Container/Container";
-import BackgroundTriangles from "../components/Graphics/BackgroundTriables";
-import Triangles from "../components/Graphics/Triangles";
-import Hero from "../components/Hero/Hero";
-import Link from "../components/Link/Link";
-import Main from "../components/Main/Main";
-import MemberCardList from "../components/Member/MemberCardList";
-import RefList from "../components/Reference/RefList";
-import Section from "../components/Section/Section";
-import Seo from "../components/Seo/Seo";
-import Testemonials from "../components/Testemonial/Testemonials";
-import { H2, P } from "../components/Typography/Typography";
-import breakpoints from "../utils/breakpoints";
-import { clients } from "../utils/fakeData";
+import { graphql } from "gatsby"
+import React from "react"
+import styled from "styled-components"
+import Clients from "../components/Client/Clients"
+import Container from "../components/Container/Container"
+import BackgroundTriangles from "../components/Graphics/BackgroundTriables"
+import Triangles from "../components/Graphics/Triangles"
+import Hero from "../components/Hero/Hero"
+import Link from "../components/Link/Link"
+import Main from "../components/Main/Main"
+import MemberCardList from "../components/Member/MemberCardList"
+import RefList from "../components/Reference/RefList"
+import Section from "../components/Section/Section"
+import Seo from "../components/Seo/Seo"
+import Testemonials from "../components/Testemonial/Testemonials"
+import { H2, P } from "../components/Typography/Typography"
+import breakpoints from "../utils/breakpoints"
+import { clients } from "../utils/fakeData"
 
 const StyledSection = styled(Section)`
   padding-top: 200px;
@@ -64,14 +64,16 @@ const IndexPage = ({ data }) => (
             Rádi vám <span className="break">pomůžeme</span>
           </H2>
           <StyledAboutText>
-            Nemusíte obvolávat množství lidí v agentuře. S námi jednáte napřímo.
-            Kancelářemi jsou nám kavárny, restaurace a jiné obytné prostory, za
-            které k našemu potěšení neplatíme nájem. K dobře{" "}
-            <strong>odvedené práci</strong> nám stačí zásuvka, počítač a heslo „
-            s chutí do toho, půl je hotovo“. Jsme parta mladých lidí, která
-            tvoří dohromady kompletní organismus pro tvorbu webů včetně
-            marketingu. Jsme dobří, <strong>jsme freelanceři</strong>{" "}
-            spoléhající se na vlastní um.
+            Nemusíte obvolávat množství lidí v agentuře. U nás{" "}
+            <strong>jednáte přímo s jednotlivými odborníky</strong>. Kancelářemi
+            jsou nám kavárny, restaurace a jiné obytné prostory, za které k
+            našemu potěšení neplatíme nájem. K dobře odvedené práci nám stačí
+            zásuvka, počítač, nadšení a zkušenosti. Jsme{" "}
+            <strong>parta freelancerů</strong>, která tvoří{" "}
+            <strong>
+              kompletní organismus pro tvorbu webů včetně marketingu
+            </strong>
+            . Nebojíme se ani spolupráce s dalšími týmy a agenturami.
           </StyledAboutText>
           <StyledLinks>
             <li>
