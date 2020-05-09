@@ -129,7 +129,7 @@ const Member = ({
 }) => (
   <StyledMember>
     <div className="imageWrapper">
-      <Img fluid={photo.fluid} alt={`${firstname} ${surname} - ${position}`} />
+      <Img fixed={photo.fixed} alt={`${firstname} ${surname} - ${position}`} />
     </div>
     <div className="content">
       <p className="username">“{username}”</p>
@@ -140,7 +140,7 @@ const Member = ({
             <strong>Sledujte mě:</strong>
           </P>
           {links.map(url => (
-            <Link key={url.value} url={url.value} />
+            <Link key={url} url={url} />
           ))}
         </div>
       </StyledLinks>

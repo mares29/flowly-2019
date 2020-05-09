@@ -43,12 +43,18 @@ module.exports = {
       },
     },
     {
-      resolve: "@fika/gatsby-source-cockpit",
+      resolve: "gatsby-source-sanity",
       options: {
-        token: "13e1804e54e36cb6c5712ce787dc26",
-        baseUrl: "http://admin.flowly.cz", // (1)
-        locales: [], // (2)
-        collections: ["member", "client", "project"], // (3)
+        projectId: "fov9lxcm",
+        dataset: "production",
+
+        // a token with read permissions is required
+        // if you have a private dataset
+        // token: process.env.MY_SANITY_TOKEN,
+
+        // If the Sanity GraphQL API was deployed using `--tag <name>`,
+        // use `graphqlTag` to specify the tag name. Defaults to `default`.
+        // graphqlTag: "default",
       },
     },
   ],

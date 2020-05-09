@@ -15,10 +15,10 @@ const RefList = ({ references }) => {
     return (
       <Ref
         key={i}
-        title={ref.title.value}
-        colorText={ref.textColor.value}
-        colorBg={ref.bgColor.value}
-        image={ref.thumbnail.value.childImageSharp}
+        title={ref.name}
+        colorText={ref.textColor.hex}
+        colorBg={ref.thumbnailColor.hex}
+        image={ref.thumbnail.asset}
         link=" "
       />
     )

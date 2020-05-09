@@ -15,7 +15,6 @@ import Seo from "../components/Seo/Seo"
 import Testemonials from "../components/Testemonial/Testemonials"
 import { H2, P } from "../components/Typography/Typography"
 import breakpoints from "../utils/breakpoints"
-import { clients } from "../utils/fakeData"
 
 const StyledSection = styled(Section)`
   padding-top: 200px;
@@ -65,15 +64,15 @@ const IndexPage = ({ data }) => (
           </H2>
           <StyledAboutText>
             Nemusíte obvolávat množství lidí v agentuře. U nás{" "}
-            <strong>jednáte přímo s jednotlivými odborníky</strong>. Kancelářemi
+            <strong>jednáte přímo s jednotlivými odborníky.</strong> Kancelářemi
             jsou nám kavárny, restaurace a jiné obytné prostory, za které k
             našemu potěšení neplatíme nájem. K dobře odvedené práci nám stačí
-            zásuvka, počítač, nadšení a zkušenosti. Jsme{" "}
-            <strong>parta freelancerů</strong>, která tvoří{" "}
+            zásuvka, počítač, nadšení a zkušenosti. <strong>Jsme parta</strong>{" "}
+            freelancerů, která tvoří{" "}
             <strong>
-              kompletní organismus pro tvorbu webů včetně marketingu
-            </strong>
-            . Nebojíme se ani spolupráce s dalšími týmy a agenturami.
+              kompletní organismus pro tvorbu webů včetně marketingu.
+            </strong>{" "}
+            Nebojíme se ani spolupráce s dalšími týmy a agenturami.
           </StyledAboutText>
           <StyledLinks>
             <li>
@@ -81,9 +80,6 @@ const IndexPage = ({ data }) => (
             </li>
             <li>
               <Link to="/sluzby#marketing">Internetový marketing</Link>
-            </li>
-            <li>
-              <Link to="/sluzby#web">Vývoj e-shopů a systémů na míru</Link>
             </li>
             <li>
               <Link to="/sluzby#ux">UX design</Link>
@@ -105,17 +101,17 @@ const IndexPage = ({ data }) => (
         </Container>
         <Container wide>
           <StyledRefWrapper>
-            <RefList references={data.allCockpitProject.edges} />
+            <RefList references={data.allSanityProject.edges} />
           </StyledRefWrapper>
         </Container>
         <Container>
           <Link to="/projekty">Prohlédnout všechny reference</Link>
-          <Clients clients={clients} />
+          <Clients clients={data.allSanityLogo.edges} />
         </Container>
       </Section>
 
       <Section long>
-        <Testemonials testemonials={data.allCockpitClient.edges} showMoreLink />
+        <Testemonials testemonials={data.allSanityClient.edges} showMoreLink />
       </Section>
 
       <Section long>
@@ -124,7 +120,7 @@ const IndexPage = ({ data }) => (
           <H2>
             Kdo se bude starat <span className="break">o Vaše projekty?</span>
           </H2>
-          <MemberCardList people={data.allCockpitMember.edges} />
+          <MemberCardList people={data.allSanityMember.edges} />
           <Link to="/o-nas">Více informací o nás</Link>
         </Container>
       </Section>
@@ -143,76 +139,70 @@ export const homepageQuery = graphql`
         author
       }
     }
-    allCockpitMember {
+    allSanityMember(sort: { order: ASC, fields: priority }) {
       edges {
         node {
-          name {
-            value
-          }
-          surname {
-            value
-          }
-          position {
-            value
-          }
-          photo {
-            value {
-              childImageSharp {
-                sizes(maxWidth: 513) {
-                  ...GatsbyImageSharpSizes_noBase64
-                }
+          name
+          surname
+          position
+          cover {
+            asset {
+              fixed(width: 513) {
+                ...GatsbySanityImageFixed
               }
             }
           }
         }
       }
     }
-    allCockpitProject(limit: 4) {
+    allSanityProject(limit: 4) {
       edges {
         node {
-          title {
-            value
-          }
-          bgColor {
-            value
+          name
+          thumbnailColor {
+            hex
           }
           textColor {
-            value
+            hex
           }
           thumbnail {
-            value {
-              childImageSharp {
-                fluid(maxWidth: 513) {
-                  ...GatsbyImageSharpFluid_noBase64
-                }
+            asset {
+              fluid(maxWidth: 513) {
+                ...GatsbySanityImageFluid
               }
             }
           }
         }
       }
     }
-    allCockpitClient(limit: 3) {
+    allSanityClient(limit: 3) {
       edges {
         node {
-          cockpitId
-          name {
-            value
-          }
-          position {
-            value
-          }
-          text {
-            value
-          }
-          photo {
-            value {
-              childImageSharp {
-                fixed(width: 90, height: 90) {
-                  ...GatsbyImageSharpFixed
-                }
+          name
+          position
+          text
+          cover {
+            asset {
+              fixed(width: 90, height: 90) {
+                ...GatsbySanityImageFixed
               }
             }
           }
+        }
+      }
+    }
+    allSanityLogo(limit: 6) {
+      edges {
+        node {
+          logo {
+            asset {
+              fixed(width: 240) {
+                ...GatsbySanityImageFixed
+              }
+            }
+          }
+          alt
+          title
         }
       }
     }

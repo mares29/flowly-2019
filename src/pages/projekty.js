@@ -11,10 +11,9 @@ import List from "../components/List/List"
 import Main from "../components/Main/Main"
 import RefList from "../components/Reference/RefList"
 import Section from "../components/Section/Section"
+import Seo from "../components/Seo/Seo"
 import Testemonials from "../components/Testemonial/Testemonials"
 import { H2, Hr, P } from "../components/Typography/Typography"
-import { clients } from "../utils/fakeData"
-import Seo from "../components/Seo/Seo"
 
 const StyledSection = styled(Section)`
   padding-top: 0;
@@ -32,17 +31,55 @@ const pageData = {
     {
       heading: "GLS Česká republika",
       text:
-        "Nemusíte obvolávat množství lidí v agentuře. S námi jednáte napřímo. Kancelářemi jsou nám kavárny, restaurace a jiné obytné prostory,",
+        "Vytvoření přistávacích stránek pro kampaně, copywriting a grafika pro propagační materiály.",
     },
     {
-      heading: "GLS Česká republika",
+      heading: "Kuboušek Holding",
       text:
-        "Nemusíte obvolávat množství lidí v agentuře. S námi jednáte napřímo. Kancelářemi jsou nám kavárny, restaurace a jiné obytné prostory,",
+        "Vytvoření hlavního webového rozcestníku firmy, optimalizace marketingových procesů a školení inhouse týmu firmy.",
     },
     {
-      heading: "GLS Česká republika",
+      heading: "Equa Bank",
       text:
-        "Nemusíte obvolávat množství lidí v agentuře. S námi jednáte napřímo. Kancelářemi jsou nám kavárny, restaurace a jiné obytné prostory,",
+        "Grafické práce na propagačních a interních materiálech společnosti.",
+    },
+
+    {
+      heading: "Dragon fly",
+      text:
+        "Kompletní redesign e-shopu jednoho z největších prodejců oblečení pro pole dance, jógu a fitness.",
+    },
+    {
+      heading: "GoPay",
+      text:
+        "Spolupráce na zlepšení použitelnosti a tvorbě rozhraní interních aplikací.",
+    },
+    {
+      heading: "Libristo",
+      text:
+        "Výzkum, analytika, tvorba webu mezinárodního e-shopu s nejširší nabídkou cizojazyčné literatury.",
+    },
+    {
+      heading: "Prodej vozů Autigo.cz",
+      text:
+        "Analýza, výzkum a následný návrh designu a tvorba webu pro službu prodávající roční vozy.",
+    },
+  ],
+  tips: [
+    {
+      heading:
+        "Ještě než začneme web nebo kampaň realizovat uděláme nejvíc práce",
+      text: "každé práci předchází analýza",
+    },
+    {
+      heading: "Nepřipravíme Vám 4 návrhy designu ze kterých si vyberete",
+      text:
+        "nepřipravujeme různé varianty designu, ale  to nej z toho co jsme zjistili v analýzách",
+    },
+    {
+      heading: "Tvorba webu, který má mít smysl není levná",
+      text:
+        "že to není levné, mraky hodin a pod.. chyby můžou být mnohem dražší",
     },
   ],
 }
@@ -58,7 +95,7 @@ const ServicesPage = ({ data }) => (
       <StyledSection long>
         <BackgroundTriangles right />
         <Container wide>
-          <RefList references={data.allCockpitProject.edges} />
+          <RefList references={data.allSanityProject.edges} />
         </Container>
       </StyledSection>
 
@@ -70,27 +107,34 @@ const ServicesPage = ({ data }) => (
 
           <Row>
             <Column>
-              <List items={pageData.list} />
+              <List
+                items={pageData.list.slice(
+                  0,
+                  Math.ceil(pageData.list.length / 2)
+                )}
+              />
             </Column>
             <Column>
-              <List items={pageData.list} />
+              <List
+                items={pageData.list.slice(Math.ceil(pageData.list.length / 2))}
+              />
             </Column>
           </Row>
 
           <Hr />
 
-          <ClientList clients={clients} horizontal />
+          <ClientList clients={data.allSanityLogo.edges} horizontal />
         </Container>
       </Section>
 
       <Section long>
-        <Testemonials testemonials={data.allCockpitClient.edges} />
+        <Testemonials testemonials={data.allSanityClient.edges} />
       </Section>
 
       <Section long style={{ marginBottom: 0 }}>
         <Container>
           <H2>
-            Rozhodně se nebojíme, <span className="break">velkých výzev</span>
+            Rozhodně se nebojíme <span className="break">velkých výzev</span>
           </H2>
 
           <P>
@@ -103,7 +147,7 @@ const ServicesPage = ({ data }) => (
 
           <Row>
             <Column>
-              <List items={pageData.list} />
+              <List items={pageData.tips} />
             </Column>
           </Row>
         </Container>
@@ -116,52 +160,54 @@ export default ServicesPage
 
 export const projectsQuery = graphql`
   query {
-    allCockpitProject {
+    allSanityProject {
       edges {
         node {
-          title {
-            value
-          }
-          bgColor {
-            value
+          name
+          thumbnailColor {
+            hex
           }
           textColor {
-            value
+            hex
           }
           thumbnail {
-            value {
-              childImageSharp {
-                fluid(maxWidth: 513) {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
+            asset {
+              fluid(maxWidth: 513) {
+                ...GatsbySanityImageFluid
               }
             }
           }
         }
       }
     }
-    allCockpitClient(limit: 6) {
+    allSanityClient(limit: 6) {
       edges {
         node {
-          cockpitId
-          name {
-            value
-          }
-          position {
-            value
-          }
-          text {
-            value
-          }
-          photo {
-            value {
-              childImageSharp {
-                fixed(width: 90, height: 90) {
-                  ...GatsbyImageSharpFixed_withWebp
-                }
+          name
+          position
+          text
+          cover {
+            asset {
+              fixed(width: 90, height: 90) {
+                ...GatsbySanityImageFixed
               }
             }
           }
+        }
+      }
+    }
+    allSanityLogo(limit: 6) {
+      edges {
+        node {
+          logo {
+            asset {
+              fixed(width: 240) {
+                ...GatsbySanityImageFixed
+              }
+            }
+          }
+          alt
+          title
         }
       }
     }

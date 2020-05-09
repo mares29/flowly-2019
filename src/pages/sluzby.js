@@ -1,8 +1,15 @@
 import { graphql } from "gatsby"
 import React from "react"
 import styled from "styled-components"
+import design from "../assets/images/icons/design.svg"
+import development from "../assets/images/icons/development.svg"
 import EcommerceIcon from "../assets/images/icons/ecommerce.svg"
-import MarketingIcon from "../assets/images/icons/marketing.svg"
+import {
+  default as marketing,
+  default as MarketingIcon,
+} from "../assets/images/icons/marketing.svg"
+import research from "../assets/images/icons/research.svg"
+import strategy from "../assets/images/icons/strategy.svg"
 import UxIcon from "../assets/images/icons/ux.svg"
 import DevIcon from "../assets/images/icons/webdevelopment.svg"
 import BackgroundImage from "../components/BackgroundImage/BackgroundImage"
@@ -15,16 +22,11 @@ import HeroImages from "../components/HeroImages/HeroImages"
 import Icon from "../components/Icon/Icon"
 import Main from "../components/Main/Main"
 import Section from "../components/Section/Section"
+import Seo from "../components/Seo/Seo"
 import { H2, H3, H5, P, Ul } from "../components/Typography/Typography"
+import colors from "../constants/colors"
 import icons from "../constants/icons"
 import breakpoints from "../utils/breakpoints"
-import colors from "../constants/colors"
-import strategy from "../assets/images/icons/strategy.svg"
-import research from "../assets/images/icons/research.svg"
-import design from "../assets/images/icons/design.svg"
-import development from "../assets/images/icons/development.svg"
-import marketing from "../assets/images/icons/marketing.svg"
-import Seo from "../components/Seo/Seo"
 
 const StyledAboutText = styled(P)`
   width: 1000px;
@@ -377,11 +379,9 @@ const ServicesPage = ({ data }) => (
             <span>nejdůležitější</span>
           </StyledNotSoWideH2>
           <StyledSubHeroP>
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam
-            bibendum elit eget erat. Mauris suscipit, ligula sit amet pharetra
-            semper, nibh ante cursus purus, vel sagittis velit mauris vel metus.
-            Curabitur sagittis hendrerit ante. Duis condimentum augue id magna
-            semper rutrum.
+            Důležitost výzkumu, strategie, plánování, systematičnosti..
+            workflow.. když se něco opomene, je to pak nákladnější, než udělat
+            hned dobrý výzkum..
           </StyledSubHeroP>
         </Container>
 
@@ -391,8 +391,8 @@ const ServicesPage = ({ data }) => (
               <img src={strategy} alt="strategie | Flowly Creative" />
               <H5>Strategie & plánování</H5>
               <P small>
-                Tým závislých a kreativních profesionálů pro Váš web a
-                marketing. Tým bla ble blů.
+                Každý projekt stavíme na pevných základech. Strategie a
+                plánování sjou pro nás stavebním kamenem každého projektu.
               </P>
             </StyledWaterfallItem>
 
@@ -400,8 +400,8 @@ const ServicesPage = ({ data }) => (
               <img src={research} alt="výzkum | Flowly Creative" />
               <H5>Analytika & výzku</H5>
               <P small>
-                Tým závislých a kreativních profesionálů pro Váš web a
-                marketing. Tým bla ble blů.
+                Nestřílíme od boku, každý náš projekt vychází z důkladného
+                poznání byznysu klienta a jeho zákazníků.
               </P>
             </StyledWaterfallItem>
 
@@ -409,8 +409,8 @@ const ServicesPage = ({ data }) => (
               <img src={design} alt="UX | Flowly Creative" />
               <H5>Návrh & testování</H5>
               <P small>
-                Tým závislých a kreativních profesionálů pro Váš web a
-                marketing. Tým bla ble blů.
+                Rádi tvoříme neotřelé prototypy, které testujeme a ladíme do
+                finální podoby. Prototypy pak oblékáme do sexy kabátku.
               </P>
             </StyledWaterfallItem>
 
@@ -418,8 +418,8 @@ const ServicesPage = ({ data }) => (
               <img src={development} alt="vývoj | Flowly Creative" />
               <H5>Vývoj & produkce</H5>
               <P small>
-                Tým závislých a kreativních profesionálů pro Váš web a
-                marketing. Tým bla ble blů.
+                Na vývoji spolupracujeme s ověřenými partnery. Naším společným
+                cílem je dodávat weby a aplikace v té nejvyšší kvalitě.
               </P>
             </StyledWaterfallItem>
 
@@ -427,16 +427,16 @@ const ServicesPage = ({ data }) => (
               <img src={marketing} alt="marketing | Flowly Creative" />
               <H5>Marketing</H5>
               <P small>
-                Tým závislých a kreativních profesionálů pro Váš web a
-                marketing. Tým bla ble blů.
+                Rádi vymýšlíme kreativní marketingové strategie, soustředíme se
+                na výkon a váš web k vašim zákazníkům prostě dostaneme.
               </P>
             </StyledWaterfallItem>
 
             <StyledWaterfallNote>
               <P>
-                Nemusíte se odvolávat na množství lidí v agentuře. S námi
-                jednáte napřímo. Kancelářemi jsou nám kavárny, restaurace a jiné
-                obytné prostory.
+                Často se při vývoji objeví nové požadavky a funkce, které poté
+                znovu validujeme s cílovou skupinou, aby tyto novinky dávaly
+                smysl a byly optimálně navržené.
               </P>
             </StyledWaterfallNote>
           </StyledWaterfall>

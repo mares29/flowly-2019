@@ -8,10 +8,10 @@ const TestemonialList = ({ testemonials }) => {
     return (
       <Testemonial
         key={t.cockpitId}
-        text={t.text.value}
-        name={t.name.value}
-        position={t.position.value}
-        photo={t.photo.value}
+        text={t.text}
+        name={t.name}
+        position={t.position}
+        photo={t.cover.asset.fixed}
       />
     )
   })

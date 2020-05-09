@@ -21,10 +21,10 @@ const MemberCardList = ({ people }) => {
     return (
       <MemberCard
         key={i}
-        firstname={man.name.value}
-        surname={man.surname.value}
-        position={man.position.value}
-        photo={man.photo.value.childImageSharp}
+        firstname={man.name}
+        surname={man.surname}
+        position={man.position}
+        photo={man.cover.asset}
       />
     )
   })

@@ -1,7 +1,6 @@
 import { graphql } from "gatsby"
 import React from "react"
 import styled from "styled-components"
-import TrianglesImg from "../assets/images/triangles_services.svg"
 import Container from "../components/Container/Container"
 import BackgroundTriangles from "../components/Graphics/BackgroundTriables"
 import Hero from "../components/Hero/Hero"
@@ -9,9 +8,9 @@ import HeroImages from "../components/HeroImages/HeroImages"
 import Main from "../components/Main/Main"
 import MemberList from "../components/Member/MemberList"
 import Section from "../components/Section/Section"
+import Seo from "../components/Seo/Seo"
 import { H2, P } from "../components/Typography/Typography"
 import breakpoints from "../utils/breakpoints"
-import Seo from "../components/Seo/Seo"
 
 const StyledAboutText = styled(P)`
   width: 1000px;
@@ -65,7 +64,7 @@ const AboutUsPage = ({ data }) => (
       <Section long style={{ paddingTop: 0 }}>
         <BackgroundTriangles />
         <Container>
-          <MemberList people={data.allCockpitMember.edges} />
+          <MemberList people={data.allSanityMember.edges} />
         </Container>
       </Section>
     </Main>
@@ -76,35 +75,19 @@ export default AboutUsPage
 
 export const servicesQuery = graphql`
   query {
-    allCockpitMember {
+    allSanityMember(sort: { order: ASC, fields: priority }) {
       edges {
         node {
-          name {
-            value
-          }
-          surname {
-            value
-          }
-          username {
-            value
-          }
-          position {
-            value
-          }
-          links {
-            value {
-              value
-            }
-          }
-          bio {
-            value
-          }
-          photo {
-            value {
-              childImageSharp {
-                fluid(maxWidth: 513) {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
+          name
+          surname
+          position
+          username
+          links
+          text
+          cover {
+            asset {
+              fixed(width: 513) {
+                ...GatsbySanityImageFixed
               }
             }
           }

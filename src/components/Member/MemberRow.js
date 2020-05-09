@@ -109,10 +109,7 @@ const StyledPosition = styled(P)`
 const MemberRow = ({ firstname, surname, position, photo, phone, email }) => (
   <StyledMember>
     <div className="imageWrapper">
-      <Img
-        resolutions={photo.resolutions}
-        alt={`${firstname} ${surname} - ${position}`}
-      />
+      <Img fixed={photo.fixed} alt={`${firstname} ${surname} - ${position}`} />
     </div>
     <div className="nameWrapper">
       <StyledName>

@@ -1,9 +1,9 @@
 import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
+import breakpoints from "../../utils/breakpoints"
 import ClientList from "../Client/ClientList"
 import { H3, P } from "../Typography/Typography"
-import breakpoints from "../../utils/breakpoints"
 
 const StyledLogosWrap = styled.div`
   display: flex;

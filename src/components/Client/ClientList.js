@@ -1,9 +1,8 @@
-import { graphql, StaticQuery } from "gatsby";
-import Img from "gatsby-image";
-import PropTypes from "prop-types";
-import React from "react";
-import styled from "styled-components";
-import breakpoints from "../../utils/breakpoints";
+import Img from "gatsby-image"
+import PropTypes from "prop-types"
+import React from "react"
+import styled from "styled-components"
+import breakpoints from "../../utils/breakpoints"
 
 const StyledClientList = styled.div`
   flex: 1;
@@ -36,38 +35,18 @@ const StyledClientList = styled.div`
 
 const ClientList = ({ clients, horizontal }) => {
   const allClients = clients =>
-    clients.map((node, i) => {
+    clients.map((client, i) => {
       if (horizontal && i >= 4) return false
-      const man = node.node
       return (
         <div key={i}>
-          <Img fixed={man.childImageSharp.fixed} />
+          <Img fixed={client.node.logo.asset.fixed} />
         </div>
       )
     })
   return (
-    <StaticQuery
-      query={graphql`
-        query {
-          allFile(filter: { relativeDirectory: { eq: "clients" } }) {
-            edges {
-              node {
-                childImageSharp {
-                  fixed(width: 240) {
-                    ...GatsbyImageSharpFixed_withWebp
-                  }
-                }
-              }
-            }
-          }
-        }
-      `}
-      render={data => (
-        <StyledClientList horizontal={horizontal}>
-          {allClients(data.allFile.edges)}
-        </StyledClientList>
-      )}
-    />
+    <StyledClientList horizontal={horizontal}>
+      {allClients(clients)}
+    </StyledClientList>
   )
 }
 

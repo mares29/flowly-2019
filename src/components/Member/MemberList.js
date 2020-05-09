@@ -20,13 +20,13 @@ const MemberList = ({ people }) => {
     return (
       <Member
         key={i}
-        firstname={man.name.value}
-        surname={man.surname.value}
-        username={man.username.value}
-        bio={man.bio.value}
-        links={man.links.value}
-        position={man.position.value}
-        photo={man.photo.value.childImageSharp}
+        firstname={man.name}
+        surname={man.surname}
+        username={man.username}
+        bio={man.text}
+        links={man.links}
+        position={man.position}
+        photo={man.cover.asset}
       />
     )
   })

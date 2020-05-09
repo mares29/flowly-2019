@@ -16,12 +16,12 @@ import Link from "../components/Link/Link"
 import Main from "../components/Main/Main"
 import MemberRowList from "../components/Member/MemberRowList"
 import Section from "../components/Section/Section"
+import Seo from "../components/Seo/Seo"
 import { H2, H4, P } from "../components/Typography/Typography"
 import colors from "../constants/colors"
 import fonts from "../constants/fonts"
 import icons from "../constants/icons"
 import breakpoints from "../utils/breakpoints"
-import Seo from "../components/Seo/Seo"
 
 const StyledMapText = styled(P)`
   width: 40%;
@@ -272,7 +272,7 @@ const ContactPage = ({ data }) => (
             Kontakty
             <span> na členy</span>
           </H2>
-          <MemberRowList people={data.allCockpitMember.edges} />
+          <MemberRowList people={data.allSanityMember.edges} />
         </Container>
       </Section>
     </Main>
@@ -283,30 +283,18 @@ export default ContactPage
 
 export const servicesQuery = graphql`
   query {
-    allCockpitMember {
+    allSanityMember(sort: { order: ASC, fields: priority }) {
       edges {
         node {
-          name {
-            value
-          }
-          surname {
-            value
-          }
-          position {
-            value
-          }
-          email {
-            value
-          }
-          phone {
-            value
-          }
-          photo {
-            value {
-              childImageSharp {
-                resolutions(width: 140, height: 140) {
-                  ...GatsbyImageSharpResolutions
-                }
+          name
+          surname
+          position
+          phone
+          email
+          cover {
+            asset {
+              fixed(width: 140, height: 140) {
+                ...GatsbySanityImageFixed
               }
             }
           }

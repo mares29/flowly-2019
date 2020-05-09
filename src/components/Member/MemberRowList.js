@@ -23,14 +23,14 @@ const MemberRowList = ({ people }) => {
   const allPeople = people.map((node, i) => {
     const man = node.node
     return (
-      <React.Fragment key={man.email.value}>
+      <React.Fragment key={man.email}>
         <MemberRow
-          firstname={man.name.value}
-          surname={man.surname.value}
-          position={man.position.value}
-          phone={man.phone.value}
-          email={man.email.value}
-          photo={man.photo.value.childImageSharp}
+          firstname={man.name}
+          surname={man.surname}
+          position={man.position}
+          phone={man.phone}
+          email={man.email}
+          photo={man.cover.asset}
         />
         {i + 1 < people.length ? resolveBorder(i) : null}
       </React.Fragment>

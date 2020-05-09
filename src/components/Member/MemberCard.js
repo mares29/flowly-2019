@@ -1,9 +1,9 @@
-import Img from 'gatsby-image'
-import PropTypes from 'prop-types'
-import React from 'react'
-import styled from 'styled-components'
-import breakpoints from '../../utils/breakpoints'
-import { H3 } from '../Typography/Typography'
+import Img from "gatsby-image"
+import PropTypes from "prop-types"
+import React from "react"
+import styled from "styled-components"
+import breakpoints from "../../utils/breakpoints"
+import { H3 } from "../Typography/Typography"
 
 const StyledMember = styled.article`
   background-color: ${props => props.bgColor};
@@ -43,7 +43,7 @@ const StyledMember = styled.article`
 const MemberCard = ({ firstname, surname, position, photo }) => (
   <StyledMember>
     <div className="imageWrapper">
-      <Img sizes={photo.sizes} alt={`${firstname} ${surname} - ${position}`} />
+      <Img fixed={photo.fixed} alt={`${firstname} ${surname} - ${position}`} />
     </div>
     <H3>
       {firstname} <span>{surname}</span>

@@ -38,7 +38,7 @@ const Testemonial = ({ text, position, name, photo }) => (
   <StyledTestemonial>
     <StyledText>{text}</StyledText>
     <StyledClient>
-      <Img fixed={photo.childImageSharp.fixed} />
+      <Img fixed={photo} />
       <h5>{name}</h5>
       <p>{position}</p>
     </StyledClient>
