@@ -3,7 +3,6 @@ import React from "react"
 import styled from "styled-components"
 import design from "../assets/images/icons/design.svg"
 import development from "../assets/images/icons/development.svg"
-import EcommerceIcon from "../assets/images/icons/ecommerce.svg"
 import {
   default as marketing,
   default as MarketingIcon,
@@ -282,60 +281,6 @@ const ServicesPage = ({ data }) => (
                   rel="noopener noreferrer"
                 >
                   <strong>Argo22</strong>
-                </a>
-              </StyledNote>
-            </StyledServiceItem>
-
-            <StyledServiceItem>
-              <H3>
-                Vývoj e-shopů
-                <br />a systémů na míru
-              </H3>
-              <StyledIcon src={EcommerceIcon} width="200" />
-              <P small>
-                Potřebujete e-shop na míru? Pomůžeme vám vybrat vhodné řešení
-                pro vaše potřeby a spolu s našimi prověřenými partery se pustíme
-                do realizace.
-              </P>
-              <Ul>
-                <li>Zakázkový vývoj e-commerce</li>
-                <li>Spolupráce se startupy</li>
-                <li>Komplexní systémy na míru</li>
-                <li>Ideová validace</li>
-                <li>Bussiness analytika</li>
-              </Ul>
-              <StyledNote>
-                <Icon
-                  icon={icons.NOTE}
-                  leftMargin={0}
-                  rightMargin={10}
-                  color={colors.creative}
-                  size={24}
-                  altText="poznamka"
-                />
-                V této oblasti spolupracujeme s agenturami jako je{" "}
-                <a
-                  href="https://www.argo22.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <strong>Argo22</strong>
-                </a>
-                ,{" "}
-                <a
-                  href="https://www.elasticr.cz/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <strong>Elasti.cr</strong>
-                </a>
-                ,{" "}
-                <a
-                  href="https://www.antstudio.cz/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <strong>ANT studio</strong>
                 </a>
               </StyledNote>
             </StyledServiceItem>
